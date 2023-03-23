@@ -11,7 +11,8 @@
                 StrokeShape="RoundRectangle 30" >
             <Grid RowDefinitions="Auto" ColumnDefinitions="*,30">
                 <Label 
-            Text="Atualizar"
+            Text="ATUALIZAR"
+            FontAttributes="Bold"
             TextColor="White"
             HorizontalOptions="Center"
             Grid.Row="0"
@@ -30,9 +31,9 @@
         </Border>
 
         <Grid Margin="30, 0" ColumnDefinitions="*,*">
-            <RadioButton TextColor="Green" Content="Receita" IsChecked="True" />
+            <RadioButton TextColor="Green" Content="RECEITA" IsChecked="True" FontAttributes="Bold" />
 
-            <RadioButton TextColor="Red" HorizontalOptions="End" Grid.Column="1" Content="Despesa" />
+            <RadioButton TextColor="Red" HorizontalOptions="End" Grid.Column="1" Content="DESPESA"  FontAttributes="Bold"/>
         </Grid>
 
         <Entry Placeholder="Nome" Margin="15,0"/>
