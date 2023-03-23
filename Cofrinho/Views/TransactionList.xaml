@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage 
+                
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cofrinho.Views.TransactionList"
-             Title="TransactionList">
+             Title="List">
     <VerticalStackLayout>
-        <Label 
-            Text="Transaction List"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+  
+        <Grid Padding="15" ColumnDefinitions="50, *, Auto">
+            <Label Text="S" 
+                   BackgroundColor="White"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" 
+                   FontSize="20"/>
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Salário" 
+                       TextColor="Black"/>
+                <Label Text="23/03/2023" 
+                       TextColor="#BABABA" />
+            </VerticalStackLayout>
 
-        <Button Text="+" Clicked="OnButtonClicked_To_TransactionAdd"/>
-        <Button Text="Edit" Clicked="OnButtonClicked_To_TransactionEdit"/>
+            <Label 
+                Text="R$3.600,00" 
+                Grid.Column="2" 
+                TextColor="Green"
+                VerticalOptions="Center"
+                />
+        </Grid>    
+
+
+            <Button Text="Edit" Clicked="OnButtonClicked_To_TransactionEdit"
+                HorizontalOptions="Center"/>
+
+       
+            <Button Text="+" Clicked="OnButtonClicked_To_TransactionAdd"
+                HorizontalOptions="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        
+        
+        
+     
+
+          
+
+
+
+  
+            
+      
+
     </VerticalStackLayout>
 </ContentPage>
