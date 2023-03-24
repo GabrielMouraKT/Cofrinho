@@ -4,10 +4,10 @@ namespace Cofrinho;
 
 public partial class App : Application
 {
-	public App()
+	public App(TransactionList listPage)
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage(new TransactionList());
+		MainPage = new NavigationPage(listPage);
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Cofrinho.Repositories;
+using Cofrinho.Views;
 using CommunityToolkit.Maui;
 using LiteDB;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			})
 
-            .RegisterDatabaseAndRepositories();
+            .RegisterDatabaseAndRepositories()
+			.RegisterViews();
 
 #if DEBUG
 		builder.Logging.AddDebug();
@@ -37,6 +39,14 @@ public static class MauiProgram
 			}
 			);
 		mauiAppBuilder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
+		return mauiAppBuilder;
+
+	}
+	public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
+	{	
+		mauiAppBuilder.Services.AddTransient<TransactionAdd>();
+		mauiAppBuilder.Services.AddTransient<TransactionEdit>();
+		mauiAppBuilder.Services.AddTransient<TransactionList>();
 		return mauiAppBuilder;
 	}
 }

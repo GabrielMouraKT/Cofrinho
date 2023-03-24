@@ -5,29 +5,31 @@
              Title="TransactionAdd">
 
 <VerticalStackLayout Spacing="10">
+    
         <Border BackgroundColor="#FFA200"
                 Stroke="Transparent" 
                 Margin="15"
                 Padding="15" 
                 StrokeShape="RoundRectangle 30" >
-            <Grid RowDefinitions="Auto" ColumnDefinitions="*,30">
+            
+            <Grid RowDefinitions="Auto" 
+                  ColumnDefinitions="*,30">
         <Label 
             Text="Novo"
             TextColor="White"
             HorizontalOptions="Center"
             Grid.Row="0"
-            Grid.Column="0"
-            />
+            Grid.Column="0"/>
 
              <Image
             HorizontalOptions="Center" 
-            
             Source="closex.png"
             WidthRequest="17"
             Grid.Row="0"
             Grid.Column="1">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+                        <TapGestureRecognizer 
+                            Tapped="TapGestureRecognizer_Tapped">
                         </TapGestureRecognizer>
                     </Image.GestureRecognizers>
                     </Image>
@@ -35,19 +37,42 @@
             </Grid>
         </Border>
 
-        <Grid Margin="30, 0" ColumnDefinitions="*,*">
-            <RadioButton TextColor="Green" Content="Receita" IsChecked="True" />
+        <Label TextColor="Red" x:Name="LabelError" 
+               IsVisible="False" />
+
+        <Grid Margin="30, 0" 
+              ColumnDefinitions="*,*">
             
-            <RadioButton TextColor="Red" HorizontalOptions="End" Grid.Column="1" Content="Despesa" />
+            <RadioButton x:Name="RadioIncome"
+                TextColor="Green" 
+                Content="Receita" 
+                IsChecked="True" />
+            
+            <RadioButton x:Name="RadioExpense"
+                TextColor="Red" 
+                HorizontalOptions="End" 
+                Grid.Column="1" 
+                Content="Despesa" />
+            
         </Grid>
 
-        <Entry Placeholder="Nome" Margin="15,0"/>
+        <Entry x:Name="EntryName"  
+            Placeholder="Nome" 
+            Margin="15,0"/>
 
-        <DatePicker Margin="15,0" />
+        <DatePicker x:Name="DatePickerDate"
+            Margin="15,0" />
 
-        <Entry Margin="15,0" Placeholder="Valor" />
+        <Entry x:Name="EntryValue"
+            Margin="15,0" 
+            Placeholder="Valor" />
 
-        <Button BackgroundColor="#FFA200" Margin="15,0" TextColor="White" Text="Salvar" HorizontalOptions="Center" />
+        <Button BackgroundColor="#FFA200" 
+                Margin="15,0" 
+                TextColor="White" 
+                Text="Salvar" 
+                HorizontalOptions="Center" 
+                Clicked="OnButtonClicked_Save"/>
 
     </VerticalStackLayout>
 </ContentPage>
