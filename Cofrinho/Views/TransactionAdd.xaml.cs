@@ -1,16 +1,19 @@
 using Cofrinho.Models;
 using Cofrinho.Repositories;
+using CommunityToolkit.Mvvm.Messaging;
 using System.Text;
 
 namespace Cofrinho.Views;
 
 public partial class TransactionAdd : ContentPage
 {
+    
     private ITransactionRepository _repository;
 	public TransactionAdd(ITransactionRepository repository)
 	{
 		InitializeComponent();
         _repository = repository;
+       
 
        
 	}
@@ -36,6 +39,7 @@ public partial class TransactionAdd : ContentPage
 
         //Fechar a Tela*
         Navigation.PopModalAsync();
+        WeakReferenceMessenger.Default.Send<string>(String.Empty);  
 
        var count = _repository.GettAll().Count;
         App.Current.MainPage.DisplayAlert("Mensagem!",$"Existem {count} registro(s) no banco!","Ok");

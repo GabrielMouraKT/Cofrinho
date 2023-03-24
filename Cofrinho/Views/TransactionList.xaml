@@ -71,7 +71,8 @@
                    Grid.Row="1"
                        TextColor="White"
                        FontSize="36"
-                       Margin="10, 0"/>
+                       Margin="10, 0"
+                       x:Name="LabelBalance"/>
             
                 <Button Text="+" 
                 Clicked="OnButtonClicked_To_TransactionAdd"
@@ -90,9 +91,12 @@
                    Grid.Row="3"
                    FontSize="10"
                    TextColor="White"
-                   Margin="10, 0"/>
+                   Margin="10, 0"
+                   />
             
-            <Label Text="R$3.600,00" 
+            <Label
+                   x:Name="LabelIncome"             
+                   Text="R$3.600,00" 
                    Grid.Row="4"  
                    FontSize="12"
                    TextColor="GreenYellow"
@@ -102,9 +106,12 @@
                    Grid.Row="3" 
                    FontSize="10"
                    Grid.Column="1"
-                   TextColor="White"/>
+                   TextColor="White"
+                   />
             
-            <Label Text="R$840,00" 
+            <Label
+                   x:Name="LabelExpense"
+                   Text="R$840,00" 
                    Grid.Row="4" 
                    FontSize="12"
                    Grid.Column="1"
