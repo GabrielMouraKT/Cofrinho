@@ -7,30 +7,44 @@
              Title="List">
     <VerticalStackLayout>
 
-        <Grid Padding="15"   
-              ColumnDefinitions="50,*,Auto"> 
+
+        <CollectionView x:Name="CollectionViewTransactions">
             
-            <Label Text="S"
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                    <Grid Padding="15"   
+              ColumnDefinitions="50,*,Auto">
+
+                        <Label Text="S"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center" 
                    FontSize="20"
                    BackgroundColor="White"/>
-            
-            <VerticalStackLayout Grid.Column="1">
-                <Label Text="Salario" 
+
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="{Binding Name}" 
                        TextColor="Black"/>
-                
-                <Label Text="10/10/2022" 
+
+                            <Label Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}" 
                        TextColor="#BABABA" />
-            
-            </VerticalStackLayout>
-            
-            <Label Grid.Column="2" 
-                   Text="R$3.600,00" 
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                   Text="{Binding Value, StringFormat='{0:C}'}" 
                    TextColor="Green"
                    VerticalOptions="Center"
                    />
-        </Grid>
+                    </Grid>
+                    
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        
        
         <Button Text="Edit" 
                 Clicked="OnButtonClicked_To_TransactionEdit"
