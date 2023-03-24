@@ -1,6 +1,6 @@
 using Cofrinho.Models;
 using Cofrinho.Repositories;
-using Java.Lang;
+using System.Text;
 
 namespace Cofrinho.Views;
 
@@ -66,23 +66,24 @@ public partial class TransactionAdd : ContentPage
 
             if(string.IsNullOrEmpty(EntryName.Text) || string.IsNullOrWhiteSpace(EntryName.Text)) 
             {
-                sb.Append("O campo 'Nome' deve ser preenchido!");
+                sb.AppendLine("O campo 'Nome' deve ser preenchido!");
             valid = false;
             }
              if (string.IsNullOrEmpty(EntryValue.Text) || string.IsNullOrWhiteSpace(EntryValue.Text))
              {
-             sb.Append("O campo 'Valor' deve ser preenchido!");
+             sb.AppendLine("O campo 'Valor' deve ser preenchido!");
              valid = false;
              }
              double result;
-             if (string.IsNullOrEmpty(EntryValue.Text) && double.TryParse(EntryValue.Text, out result))
+             if (!string.IsNullOrEmpty(EntryValue.Text) && !double.TryParse(EntryValue.Text, out result))
              {
-             sb.Append("O campo 'Valor' è invalido!");
+             sb.AppendLine("O campo 'Valor' è invalido!");
              valid = false;
 
              }
              if (valid == false)
              {
+            LabelError.IsVisible= true;
             LabelError.Text = sb.ToString();
         }
 

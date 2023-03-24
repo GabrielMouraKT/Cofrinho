@@ -37,8 +37,11 @@
             </Grid>
         </Border>
 
-        <Label TextColor="Red" x:Name="LabelError" 
-               IsVisible="False" />
+        <Label TextColor="Red" 
+               x:Name="LabelError"
+               Margin="30, 0"
+               IsVisible="False" 
+               />
 
         <Grid Margin="30, 0" 
               ColumnDefinitions="*,*">

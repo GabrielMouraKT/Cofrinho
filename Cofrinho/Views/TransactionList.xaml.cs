@@ -22,6 +22,6 @@ public partial class TransactionList : ContentPage
 
     private void OnButtonClicked_To_TransactionEdit(object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new TransactionEdit());
+        Navigation.PushModalAsync(_transactionEdit);
     }
 }
