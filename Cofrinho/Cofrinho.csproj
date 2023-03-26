@@ -51,6 +51,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Libraries\Converters\TransactionNameConverter.cs" />
+	  <Compile Remove="Libraries\Converters\TransactionNameConverterColor.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\closex.svg" />
 	</ItemGroup>
 

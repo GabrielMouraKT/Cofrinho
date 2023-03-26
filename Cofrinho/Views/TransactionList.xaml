@@ -13,7 +13,7 @@
      <ResourceDictionary >
             <converters:TransactionValueColorConverter x:Key="TransactionValueColorConverter"/>
             <converters:TransactionValueConverter x:Key="TransactionValueConverter"/>
-
+            
 
         </ResourceDictionary>
 
@@ -53,10 +53,12 @@
                                 
                         <Label 
                             Text="X"
-                            FontSize="20"
-                            Margin="12,2"
+                            FontSize="18"
+                            Margin="11,2"
                             Padding="2"
-                            TextColor="Black"
+                            TextColor="Red"
+                            FontAttributes="Bold"
+                            
                             />
                             
                         </Border>
@@ -64,17 +66,17 @@
                         <VerticalStackLayout Grid.Column="1">
                             <Label Text="{Binding Name}" 
                        TextColor="Black"
-                                   FontAttributes="Bold"/>
+                                   />
 
                             <Label Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}" 
-                       TextColor="#BABABA" FontAttributes="Bold"/>
+                       TextColor="#BABABA" />
 
                         </VerticalStackLayout>
 
                         <Label Grid.Column="2" 
                    Text="{Binding ., Converter={StaticResource TransactionValueConverter}}" 
                    TextColor="{Binding .,Converter={StaticResource TransactionValueColorConverter}}"
-                   VerticalOptions="Center" FontAttributes="Bold"/>
+                   VerticalOptions="Center" />
                         
                     </Grid>
                     
@@ -92,6 +94,7 @@
                 Stroke="Transparent"
                 Padding="10, 15"
                 StrokeShape="RoundRectangle 30"
+
                 >
             
             
@@ -115,7 +118,7 @@
                 HorizontalOptions="Center" 
                 Grid.Column="1" 
                 Grid.RowSpan="2"
-                FontSize="48"
+                FontSize="{OnPlatform Default=48, Android=36}"
                 WidthRequest="54"
                 HeightRequest="54"
                 Padding="0"
