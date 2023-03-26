@@ -29,7 +29,7 @@
             Grid.Column="1">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer 
-                            Tapped="TapGestureRecognizer_Tapped">
+                            Tapped="TapGestureRecognizerTappedToClose">
                         </TapGestureRecognizer>
                     </Image.GestureRecognizers>
                     </Image>
@@ -37,6 +37,8 @@
             </Grid>
         </Border>
 
+        
+    
         <Label TextColor="Red" 
                x:Name="LabelError"
                Margin="30, 0"
@@ -49,7 +51,7 @@
             <RadioButton x:Name="RadioIncome"
                 TextColor="Green" 
                 Content="Receita" 
-                IsChecked="True" />
+                IsChecked="True"/>
             
             <RadioButton x:Name="RadioExpense"
                 TextColor="Red" 
@@ -61,14 +63,17 @@
 
         <Entry x:Name="EntryName"  
             Placeholder="Nome" 
-            Margin="15,0"/>
+            Margin="15,0"
+               TextColor="Black"/>
 
         <DatePicker x:Name="DatePickerDate"
-            Margin="15,0" />
+            Margin="15,0"
+            TextColor="Black"/>
 
         <Entry x:Name="EntryValue"
             Margin="15,0" 
-            Placeholder="Valor" />
+            Placeholder="Valor" 
+               TextColor="Black"/>
 
         <Button BackgroundColor="#FFA200" 
                 Margin="15,0" 

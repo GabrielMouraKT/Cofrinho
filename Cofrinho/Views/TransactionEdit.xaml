@@ -31,7 +31,7 @@
             Grid.Row="0"
             Grid.Column="1">
               <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerTappedToClose">
                         </TapGestureRecognizer>
                     </Image.GestureRecognizers>     
              </Image>
@@ -40,19 +40,50 @@
             </Grid>
         </Border>
 
-        <Grid Margin="30, 0" ColumnDefinitions="*,*">
-            <RadioButton TextColor="Green" Content="Receita" IsChecked="True" FontAttributes="Bold" />
 
-            <RadioButton TextColor="Red" HorizontalOptions="End" Grid.Column="1" Content="Despesa"  FontAttributes="Bold"/>
+        <Label TextColor="Red" 
+               x:Name="LabelError"
+               Margin="30, 0"
+               IsVisible="False" 
+               />
+
+
+        <Grid Margin="30, 0" 
+              ColumnDefinitions="*,*">
+
+            <RadioButton x:Name="RadioIncome"
+                TextColor="Green" 
+                Content="Receita" 
+                IsChecked="True"/>
+
+            <RadioButton x:Name="RadioExpense"
+                TextColor="Red" 
+                HorizontalOptions="End" 
+                Grid.Column="1" 
+                Content="Despesa" />
+
         </Grid>
 
-        <Entry Placeholder="Nome" Margin="15,0" TextColor="Black" FontAttributes="Bold"/>
+        <Entry x:Name="EntryName"  
+            Placeholder="Nome" 
+            Margin="15,0"
+               TextColor="Black"/>
 
-        <DatePicker Margin="15,0" TextColor="Black" FontAttributes="Bold"/>
+        <DatePicker x:Name="DatePickerDate"
+            Margin="15,0"
+            TextColor="Black"/>
 
-        <Entry Margin="15,0" Placeholder="Valor" TextColor="Black" FontAttributes="Bold"/>
+        <Entry x:Name="EntryValue"
+            Margin="15,0" 
+            Placeholder="Valor" 
+               TextColor="Black"/>
 
-        <Button BackgroundColor="#FFA200" Margin="15,0" TextColor="White" Text="Salvar" HorizontalOptions="Center" />
-
+        <Button BackgroundColor="#FFA200" 
+                Margin="15,0" 
+                TextColor="White" 
+                Text="Salvar" 
+                HorizontalOptions="Center" 
+                Clicked="OnButtonClicked_Save"/>
+        
     </VerticalStackLayout>
 </ContentPage>

@@ -1,3 +1,4 @@
+using Cofrinho.Models;
 using Cofrinho.Repositories;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.Configuration;
@@ -18,8 +19,6 @@ public partial class TransactionList : ContentPage
     {
 
         this._repository = repository;
-
-
 
         InitializeComponent();
         //Busca no banco de Dados os registros salvos;
@@ -50,17 +49,24 @@ public partial class TransactionList : ContentPage
 	private void OnButtonClicked_To_TransactionAdd(object sender, EventArgs args)
     {
 
-        
-
         var transactionAdd = Handler.MauiContext.Services.GetService<TransactionAdd>();
         Navigation.PushModalAsync(transactionAdd);
 		
 
     }
 
-    private void OnButtonClicked_To_TransactionEdit(object sender, EventArgs e)
+
+    private void TapGestureRecognizerTapped_To_TransactionEdit(object sender, TappedEventArgs e)
     {
+
+        var grid = (Grid)sender;
+        var gesture = (TapGestureRecognizer)grid.GestureRecognizers[0];
+        Transaction transaction = (Transaction)gesture.CommandParameter;
+
         var transactionEdit = Handler.MauiContext.Services.GetService<TransactionEdit>();
+        transactionEdit.SetTransactionToEdit(transaction);
         Navigation.PushModalAsync(transactionEdit);
+
+
     }
 }
