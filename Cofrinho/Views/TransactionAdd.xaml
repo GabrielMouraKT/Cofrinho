@@ -49,12 +49,12 @@
               ColumnDefinitions="*,*">
             
             <RadioButton x:Name="RadioIncome"
-                TextColor="Green" 
+                TextColor="#009933" 
                 Content="Receita" 
                 IsChecked="True"/>
             
             <RadioButton x:Name="RadioExpense"
-                TextColor="Red" 
+                TextColor="#ff0000" 
                 HorizontalOptions="End" 
                 Grid.Column="1" 
                 Content="Despesa" />
