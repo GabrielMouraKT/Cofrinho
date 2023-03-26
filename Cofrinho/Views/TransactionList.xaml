@@ -30,32 +30,51 @@
                 <DataTemplate>
                     
                     <Grid Padding="15"   
-              ColumnDefinitions="50,*,Auto">
+                          ColumnDefinitions="50,*,Auto" 
+                          BackgroundColor="#f5f5ef">
+                        
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding}" Tapped="TapGestureRecognizerTapped_To_TransactionEdit">  
                                     
                             </TapGestureRecognizer>
                         </Grid.GestureRecognizers>
+                        <Border 
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 20"
+                            Stroke="Transparent"
+                           
+                            >
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding}" Tapped="TapGestureRecognizer_TappedToDelete"/>
 
-                        <Label Text="S"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   FontSize="20"
-                   BackgroundColor="White"/>
+                            </Border.GestureRecognizers>
+                                
+                        <Label 
+                            Text="X"
+                            FontSize="20"
+                            Margin="12,2"
+                            Padding="2"
+                            TextColor="Black"
+                            />
+                            
+                        </Border>
 
                         <VerticalStackLayout Grid.Column="1">
                             <Label Text="{Binding Name}" 
-                       TextColor="Black"/>
+                       TextColor="Black"
+                                   FontAttributes="Bold"/>
 
                             <Label Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}" 
-                       TextColor="#BABABA" />
+                       TextColor="#BABABA" FontAttributes="Bold"/>
 
                         </VerticalStackLayout>
 
                         <Label Grid.Column="2" 
                    Text="{Binding ., Converter={StaticResource TransactionValueConverter}}" 
                    TextColor="{Binding .,Converter={StaticResource TransactionValueColorConverter}}"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center" FontAttributes="Bold"/>
                         
                     </Grid>
                     
@@ -101,6 +120,7 @@
                 HeightRequest="54"
                 Padding="0"
                 CornerRadius="27"
+                     
                         
                />
 

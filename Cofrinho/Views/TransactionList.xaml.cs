@@ -69,4 +69,22 @@ public partial class TransactionList : ContentPage
 
 
     }
+
+    private void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
+    {
+
+    }
+
+    private async void TapGestureRecognizer_TappedToDelete(object sender, TappedEventArgs e)
+    {
+       bool result = await App.Current.MainPage.DisplayAlert("Excluir !", "Tem certeza que deseja excluir?", "Sim", "Não");
+
+        if (result)
+        {
+            Transaction transaction = (Transaction)e.Parameter;
+            _repository.Delete(transaction);
+
+            Reload();
+        }
+    }
 }
