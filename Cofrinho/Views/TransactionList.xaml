@@ -20,7 +20,7 @@
 
 
 </ContentPage.Resources>
-<VerticalStackLayout>
+<Grid RowDefinitions="*,200 ">
 
             
         <CollectionView x:Name="CollectionViewTransactions">
@@ -89,7 +89,8 @@
        
         
         
-        <Border Margin="10" 
+        <Border Grid.Row="1"
+                Margin="10" 
                 Background="Black" 
                 Stroke="Transparent"
                 Padding="10, 15"
@@ -147,6 +148,7 @@
                    FontSize="10"
                    Grid.Column="1"
                    TextColor="White"
+                   Margin="16, 0"
                    />
             
             <Label
@@ -156,6 +158,7 @@
                    FontSize="12"
                    Grid.Column="1"
                    TextColor="Red"
+                   Margin="16, 0"
                   />
 
 
@@ -163,6 +166,6 @@
         </Grid>
         </Border>
         
-    </VerticalStackLayout>
+    </Grid>
     
 </ContentPage>
